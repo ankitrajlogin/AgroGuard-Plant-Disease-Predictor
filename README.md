@@ -4,7 +4,9 @@ VegeCare is a web application designed to predict diseases in vegetables from im
 
 ## Features
 Disease Prediction: Upload images of vegetables to get disease predictions.
+
 High Accuracy: Achieves 92.8% accuracy through diverse dataset training.
+
 User-Friendly Interface: Intuitive and responsive design for seamless user experience.
 
 
