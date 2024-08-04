@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        
+/* navbar */
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2ecc71; /* Greenery color */
+    padding: 10px 20px;
+}
+
+.logo img {
+    max-width: 100px;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: #27ae60; /* Greenery color - lighter shade */
+}
+
+/* Responsive styles */
+@media(max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #2ecc71; /* Greenery color */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .menu.active {
+        display: flex;
+    }
+}
+
+
+/* hero section */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Set the height to occupy at least half of the viewport height */
+    background-color: #f0f0f0; /* Change the background color as needed */
+}
+
+.hero-title {
+    font-size: 3rem; /* Adjust the font size as needed */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hero-subtitle {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+/* footer */
+
+/* Footer styles */
+.footer {
+    background-color: #2ecc71; /* Greenery color */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.column:last-child {
+    margin-right: 0;
+}
+
+.column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.column p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Responsive styles */
+@media(max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .column {
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+
+
+/*  main section */
+
+#main-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px;
+    /* width: 100px; */
+}
+
+#predicted{
+    align-items: center;
+    flex-direction: row;
+}
+
+
+    </style>
+
+</head>
+<body>
+
+    
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <div>vegetable disease prediction</div>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>    
+
+
+
+    <!-- hero section -->
+    
+    <div class="hero">
+        <h1 class="hero-title">Plant Disease Prediction</h1>
+        <div class="hero-subtitle">
+            <p>Identify and diagnose plant diseases accurately</p>
+            <p>with advanced machine learning techniques</p>
+        </div>
+    </div>
+
+
+
+
+    <!-- main section -->
+    <div id="main-section">
+        <h1>Select plant and then upload photo</h1>
+        <form method="post" action="/submit" enctype="multipart/form-data">
+            <label for="model_option">Select Model:</label>
+            <select id="model_option" name="model_option">
+                <option value="apple">apple</option>
+                <option value="cherry">cherry</option>
+                <option value="corn">grape</option>
+                <option value="peach">peach</option>
+                <option value="pepper">pepper</option>
+                <option value="potato">potato</option>
+                <option value="rasoberry">rasoberry</option>
+                <option value="tomato">tomato</option>
+            </select>
+            <input type="file" name="my_image">
+            <button type="submit">Predict</button>
+        </form>
+        <div id="predicted">
+            
+            
+            {% if image %}
+            <img src="data:image/png;base64,{{ image }}" alt="Uploaded Image">
+            {% endif %}
+            {% if prediction %}
+            <p >Our prediction is : {{ prediction }}</p>
+            {% endif %}
+            {% if accuracy %}
+            <p>Accuracy is for the {{selected_option}} : {{accuracy}}</p>
+            {% endif %}
+        </div>
+        
+
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="column">
+            <h3>Team Name</h3>
+            <p>Team Electronics</p>
+        </div>
+        <div class="column">
+            <h3>Team Member</h3>
+            <p>Sandeep Saha</p>
+            <p>Ankit Raj</p>
+            <p>Nilav RoyChoudhury</p>
+            <p>Summit Mandal</p>
+        </div>
+        <div class="column">
+            <h3>About the Website</h3>
+            <p>Vegetable disease prediction</p>
+    </footer>
+
+   
+</body>
+</html>
+
