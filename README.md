@@ -12,12 +12,17 @@ User-Friendly Interface: Intuitive and responsive design for seamless user exper
 
 ## Technologies and Tools
 Frontend: ReactJS, HTML, CSS, JavaScript
+
 Backend: FastAPI
+
 Machine Learning: CNN, TensorFlow
+
 Version Control: Git
 
 
 ## Usage
 Upload an image of a vegetable.
+
 Click the "Predict" button.
+
 View the disease prediction result displayed on the screen.
