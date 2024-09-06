@@ -1,4 +1,4 @@
-# VegeCare: Disease Prediction Web Application
+# VegeCare: AgroGuard: Plant Disease Predicto
 ## Overview:
 VegeCare is a web application designed to predict diseases in vegetables from image data. Utilizing Convolutional Neural Networks (CNNs) and TensorFlow, the application achieves a robust performance with an accuracy of 92.8%. The frontend is built with ReactJS, while the backend leverages FastAPI to integrate with the neural network model.
 
